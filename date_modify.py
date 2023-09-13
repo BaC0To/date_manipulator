@@ -3,25 +3,26 @@ import re
 
 
 def offset_date_with_days(offset_days:int) -> str:
-    """Function that recalculates date with desired +- days
+    """Function that recalculates date with desired +- days offset
     params: offset_days:int
     return: date:str
     """
+
     current_date = datetime.today().strftime("%Y-%m-%d")
-    print(f"Current date: {current_date}")
+   #print(f"Current date: {current_date}")
 
     new_date = (datetime.now() + timedelta(offset_days)).date()
 
-    if offset_days > 0:
+    """ if offset_days > 0:
         print(f"New date with desired delta days= +{offset_days}: {new_date}")
     elif offset_days <= 0:
         print(f"New date with desired delta days= {offset_days}: {new_date}")
     else:
-        pass
+        pass """
 
     return str(new_date)
 
-def is_date_valid_format(input_date) -> bool:
+def is_date_iso_format(input_date) -> bool:
     """ISO Format date validator
     params: input_date : datetime.date
     return: bool
@@ -35,4 +36,4 @@ def is_date_valid_format(input_date) -> bool:
 
 
 
-is_date_valid_format(offset_date_with_days(+2))
+#is_date_iso_format(offset_date_with_days(+2))
